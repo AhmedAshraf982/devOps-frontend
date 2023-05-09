@@ -1,8 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App Page Test", () => {
+  it("Is the text is present in the Footer", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/Designed &/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });
